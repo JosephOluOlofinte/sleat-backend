@@ -5,7 +5,9 @@ mongoose.set("bufferCommands", false);
 
 const connectToDatabase = async () => {
     try {
-        await mongoose.connect(MONGO_URI);
+        await mongoose.connect(
+          "mongodb+srv://josepholofinte:joseph54321olofinte@cluster0.izd0aky.mongodb.net/sleat_db?retryWrites=true&w=majority&appName=Cluster0"
+        );
         console.log("Successfully connected to the database!");
         
     } catch (error) {
