@@ -44,11 +44,23 @@ app.use("/sessions", authenticate, sessionRoutes);
 
 app.use(errorHandler);
 
-app.listen(PORT, async () => {
-  console.log(`Server is running on port ${PORT} in the ${NODE_ENV} environment!`);
+const startServer = async () => {
+  try {
+    // Connect to DB
+    await connectToDatabase();
 
-  // Connect to DB
-  await connectToDatabase();
-});
+    // listen to port
+    app.listen(PORT, async () => {
+      console.log(
+        `Server is running on port ${PORT} in the ${NODE_ENV} environment!`
+      );
+    });
+
+  } catch (error) {
+    console.log("Failed to start server:", error)
+  }
+}
+
+
 
 
