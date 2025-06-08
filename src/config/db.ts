@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 import { MONGO_URI } from "../constants/env"
 
-mongoose.set("bufferCommands", false);
-
 const connectToDatabase = async () => {
     try {
         await mongoose.connect(MONGO_URI);
