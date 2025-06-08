@@ -57,10 +57,11 @@ const startServer = async () => {
     });
 
   } catch (error) {
-    console.log("Failed to start server:", error)
+    console.log("Failed to start server:", error);
   }
 }
 
+startServer();
 
 
 
